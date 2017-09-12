@@ -11,21 +11,20 @@
         android:id="@+id/tvx"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="58dp"
-        android:layout_marginStart="58dp"
-        android:layout_marginTop="119dp"
-        android:text="0" />
+        android:text="0"
+        android:layout_centerVertical="true"
+        android:layout_alignRight="@+id/textView7"
+        android:layout_alignEnd="@+id/textView7"
+        android:layout_marginRight="21dp"
+        android:layout_marginEnd="21dp" />
 
     <TextView
         android:id="@+id/tvy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/tvx"
-        android:layout_centerHorizontal="true"
-        android:text="0" />
+        android:text="0"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:id="@+id/tvz"
@@ -43,9 +42,9 @@
         android:id="@+id/gx"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="89dp"
         android:text="0"
-        android:layout_below="@+id/tvx"
+        android:layout_alignBaseline="@+id/gz"
+        android:layout_alignBottom="@+id/gz"
         android:layout_alignLeft="@+id/tvx"
         android:layout_alignStart="@+id/tvx" />
 
@@ -54,7 +53,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="0"
-        android:layout_above="@+id/record"
+        android:layout_alignBaseline="@+id/gx"
+        android:layout_alignBottom="@+id/gx"
         android:layout_alignLeft="@+id/tvy"
         android:layout_alignStart="@+id/tvy" />
 
@@ -63,51 +63,58 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="0"
-        android:layout_above="@+id/record"
+        android:layout_below="@+id/textView11"
         android:layout_alignLeft="@+id/tvz"
-        android:layout_alignStart="@+id/tvz" />
+        android:layout_alignStart="@+id/tvz"
+        android:layout_marginTop="12dp" />
 
     <Button
         android:id="@+id/record"
+        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="62dp"
-        android:text="RECORD"
         android:onClick="rec"
-        android:layout_below="@+id/gx"
+        android:text="RECORD"
+        android:textColor="@android:color/background_light"
+        android:layout_alignBaseline="@+id/stop"
+        android:layout_alignBottom="@+id/stop"
         android:layout_alignLeft="@+id/textView7"
         android:layout_alignStart="@+id/textView7" />
 
     <Button
         android:id="@+id/stop"
+        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="STOP"
-        android:onClick="stop"
         android:layout_above="@+id/button"
+        android:layout_alignEnd="@+id/textView9"
         android:layout_alignRight="@+id/textView9"
-        android:layout_alignEnd="@+id/textView9" />
+        android:onClick="stop"
+        android:text="STOP"
+        android:textColor="@android:color/background_light" />
 
     <TextView
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="X-AXIS"
         android:layout_alignBaseline="@+id/textView8"
         android:layout_alignBottom="@+id/textView8"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginLeft="42dp"
-        android:layout_marginStart="42dp" />
+        android:layout_marginStart="42dp"
+        android:text="X-AXIS"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Y-AXIS"
         android:layout_above="@+id/textView10"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="30dp" />
+        android:layout_marginBottom="30dp"
+        android:text="Y-AXIS"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textView9"
@@ -118,47 +125,65 @@
         android:layout_alignParentRight="true"
         android:layout_marginEnd="37dp"
         android:layout_marginRight="37dp"
-        android:text="Z-AXIS" />
+        android:text="Z-AXIS"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Accelerometer"
-        android:layout_marginBottom="17dp"
         android:layout_above="@+id/tvy"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="17dp"
+        android:text="Accelerometer"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Gyroscope"
-        android:layout_marginTop="30dp"
+        android:textStyle="bold"
         android:layout_below="@+id/tvy"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp" />
 
     <Button
         android:id="@+id/data"
+        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="data"
-        android:text="VIEW SAVED DATA"
-        android:layout_marginBottom="27dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/stop"
         android:layout_alignEnd="@+id/stop"
         android:layout_alignLeft="@+id/record"
-        android:layout_alignStart="@+id/record" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/stop"
+        android:layout_alignStart="@+id/record"
+        android:layout_marginBottom="27dp"
+        android:onClick="data"
+        android:text="VIEW SAVED DATA"
+        android:textColor="@android:color/background_light" />
 
     <Button
         android:id="@+id/button"
+        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="reset"
         android:text="RESET"
-        android:layout_below="@+id/record"
+        android:textColor="@android:color/background_light"
+        android:layout_above="@+id/data"
         android:layout_alignRight="@+id/textView10"
         android:layout_alignEnd="@+id/textView10"
-        android:layout_marginTop="29dp" />
+        android:layout_marginBottom="23dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="67dp"
+        android:text="anash sensing"
+        android:textSize="50sp"
+        android:textStyle="bold" />
 </RelativeLayout>

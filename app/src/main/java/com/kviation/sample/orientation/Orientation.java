@@ -10,6 +10,8 @@ import android.support.annotation.Nullable;
 import android.view.Surface;
 import android.view.WindowManager;
 
+import static android.hardware.SensorManager.SENSOR_DELAY_NORMAL;
+
 public class Orientation implements SensorEventListener {
 
   public interface Listener {
@@ -60,8 +62,8 @@ public class Orientation implements SensorEventListener {
       LogUtil.w("One of the sensors not available; will not provide orientation data.");
       return;
     }
-    mSensorManager.registerListener(this, accel, SENSOR_DELAY_MICROS);
-    mSensorManager.registerListener(this, gyro, SENSOR_DELAY_MICROS);
+    mSensorManager.registerListener(this, accel, SENSOR_DELAY_NORMAL);
+    mSensorManager.registerListener(this, gyro, SENSOR_DELAY_NORMAL);
   }
 
   public void stopListening() {

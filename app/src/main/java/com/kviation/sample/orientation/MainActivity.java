@@ -59,6 +59,8 @@ public class MainActivity extends AppCompatActivity implements Orientation.Liste
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
+    TypefaceUtil.overrideFont(getApplicationContext(), "SERIF", "Arcon-Regular.otf");
+
     super.onCreate(savedInstanceState);
     setContentView(R.layout.main);
 
@@ -93,6 +95,9 @@ public class MainActivity extends AppCompatActivity implements Orientation.Liste
     xg.setText("0.0");
     yg.setText("0.0");
     zg.setText("0.0");
+    String url=Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)+"/accelgyro.txt";
+    File file = new File(url);
+    file.delete();
   }
 
   public void data(View v)
