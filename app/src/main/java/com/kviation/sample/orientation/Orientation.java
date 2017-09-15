@@ -83,14 +83,12 @@ public class Orientation implements SensorEventListener {
     Sensor sensor = event.sensor;
 
     if (sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
-      lastx = dx;
-      lasty = dy;
-      lastz = dz;
+     
 
       // get the change of the x,y,z values of the accelerometer
-      dx = Math.abs(lastx - event.values[0]);
-      dy = Math.abs(lasty - event.values[1]);
-      dz = Math.abs(lastz - event.values[2]);
+      dx =event.values[0];
+      dy =event.values[1];
+      dz =event.values[2];
 
       // if the change is below 2, it is just plain noise
       if (dx < 2)
@@ -100,12 +98,10 @@ public class Orientation implements SensorEventListener {
     }
     else if (sensor.getType()==Sensor.TYPE_GYROSCOPE)
     {
-      lastgx = gx;
-      lastgy = gy;
-      lastgz = gz;
-      gx = Math.abs(lastgx - event.values[0]);
-      gy = Math.abs(lastgy - event.values[1]);
-      gz = Math.abs(lastgz - event.values[2]);
+   
+      gx = event.values[0];
+      gy = event.values[1];
+      gz = event.values[2];
 
       // if the change is below 2, it is just plain noise
       if (gx < 2)
